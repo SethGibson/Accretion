@@ -96,10 +96,17 @@
       <DataExecutionPrevention />
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="..\include\AccretionApp.h" />
+    <ClInclude Include="..\include\MeshPreview.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\assets\shaders\led_draw.frag" />
+    <None Include="..\assets\shaders\led_draw.vert" />
+  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\AccretionApp.cpp" />
+    <ClCompile Include="..\src\MeshPreview.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

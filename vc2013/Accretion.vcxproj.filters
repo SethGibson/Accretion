@@ -13,12 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Source Files\blocks">
+      <UniqueIdentifier>{0092fa2c-7b4e-47e0-a256-f3e4f4eb59b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\blocks\Cinder-ASIO">
+      <UniqueIdentifier>{78fad402-c1ff-4974-8e7d-3aa55ff61944}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\blocks\FadecandyCinderClient">
+      <UniqueIdentifier>{c1456b9c-ba64-484a-8a01-3764bf8357f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shaders">
+      <UniqueIdentifier>{a6262cef-5e2a-4bc1-9bd1-2ab9884504fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\AccretionApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\AccretionApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MeshPreview.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,5 +41,19 @@
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\MeshPreview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AccretionApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\assets\shaders\led_draw.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\led_draw.vert">
+      <Filter>Source Files\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
