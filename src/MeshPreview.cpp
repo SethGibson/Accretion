@@ -162,7 +162,7 @@ MeshPreview::MeshPreview(string pVertShader, string pFragShader, gl::Texture2dRe
 	for (int i = 0; i < S_NUM_COMPONENTS; ++i)
 		mLEDs.push_back(LED(mPositions[i], mTexCoords[i]));
 
-	mInstanceMesh = gl::VboMesh::create(geom::Sphere().subdivisions(8));
+	mInstanceMesh = gl::VboMesh::create(geom::Sphere().subdivisions(8).radius(0.5f));
 	mInstanceData = gl::Vbo::create(GL_ARRAY_BUFFER, mLEDs, GL_STATIC_DRAW);
 	
 	geom::BufferLayout attribs;
