@@ -23,12 +23,12 @@ struct LED
 class MeshPreview
 {
 public:
-	static MeshPreviewRef create(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, AccretionApp *pParent);
-	void Draw(float pElapsed);
+	static MeshPreviewRef create(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, gl::TextureCubeMapRef pTexCube, AccretionApp *pParent);
+	void Draw(vec4 pEyePos, float pElapsed);
 
 protected:
 	MeshPreview() {}
-	MeshPreview(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, AccretionApp *pParent);
+	MeshPreview(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, gl::TextureCubeMapRef pTexCube, AccretionApp *pParent);
 
 private:
 	vector<vec3>	mPositions;
@@ -40,4 +40,5 @@ private:
 	gl::BatchRef		mInstanceDraw;
 	gl::GlslProgRef		mShader;
 	gl::Texture2dRef	mTexInput;
+	gl::TextureCubeMapRef	mTexSky;
 };

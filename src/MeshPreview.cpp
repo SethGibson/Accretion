@@ -7,12 +7,12 @@ LED::LED(vec3 pPos, vec2 pUV) : Pos(pPos), UV(pUV)
 {
 }
 
-MeshPreviewRef MeshPreview::create(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, AccretionApp *pParent)
+MeshPreviewRef MeshPreview::create(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, gl::TextureCubeMapRef pTexCube, AccretionApp *pParent)
 {
-	return MeshPreviewRef(new MeshPreview(pVertShader, pFragShader, pTexture, pParent));
+	return MeshPreviewRef(new MeshPreview(pVertShader, pFragShader, pTexture, pTexCube, pParent));
 }
 
-MeshPreview::MeshPreview(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, AccretionApp *pParent) : mTexInput(pTexture)
+MeshPreview::MeshPreview(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, gl::TextureCubeMapRef pTexCube, AccretionApp *pParent) : mTexInput(pTexture), mTexSky(pTexCube)
 {
 	mPositions = 
 	{
@@ -174,13 +174,16 @@ MeshPreview::MeshPreview(string pVertShader, string pFragShader, gl::Texture2dRe
 
 	mInstanceDraw = gl::Batch::create(mInstanceMesh, mShader, { {geom::CUSTOM_0, "i_Position"},{ geom::CUSTOM_1, "i_TexCoord" } });
 	mInstanceDraw->getGlslProg()->uniform("u_Sampler", 0);
+	mInstanceDraw->getGlslProg()->uniform("u_SamplerCube", 1);
 	
 }
 
-void MeshPreview::Draw(float pElapsed)
+void MeshPreview::Draw(vec4 pEyePos, float pElapsed)
 {
 	gl::ScopedTextureBind tex(mTexInput, 0);
+	gl::ScopedTextureBind sky(mTexSky, 1);
 	mInstanceDraw->getGlslProg()->uniform("u_Offset", pElapsed*0.005f);
+	mInstanceDraw->getGlslProg()->uniform("u_EyePos", pEyePos);
 	mInstanceDraw->drawInstanced(S_NUM_COMPONENTS);
 }
 

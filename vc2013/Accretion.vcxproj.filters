@@ -38,9 +38,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\Resources.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\MeshPreview.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -53,6 +50,12 @@
       <Filter>Source Files\shaders</Filter>
     </None>
     <None Include="..\assets\shaders\led_draw.vert">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\skycube.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\skycube.vert">
       <Filter>Source Files\shaders</Filter>
     </None>
   </ItemGroup>

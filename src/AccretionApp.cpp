@@ -1,13 +1,36 @@
 #include "AccretionApp.h"
 
+SkyCube::SkyCube(string pVertShader, string pFragShader, string pCubemap, AccretionApp *pParent)
+{
+	mCubemap = gl::TextureCubeMap::create(loadImage(pParent->loadAsset(pCubemap)));
+	mShader = gl::GlslProg::create(pParent->loadAsset(pVertShader), pParent->loadAsset(pFragShader));
+	mShader->uniform("u_SamplerCube", 0);
+
+}
+
+SkyCubeRef SkyCube::create(string pVertShader, string pFragShader, string pCubemap, AccretionApp *pParent)
+{
+	return SkyCubeRef(new SkyCube(pVertShader, pFragShader, pCubemap, pParent));
+}
+
+void SkyCube::Draw()
+{
+	gl::ScopedDepthTest depthRead(false);
+	gl::ScopedTextureBind cubeTex(mCubemap, 0);
+	gl::ScopedGlslProg cubeShader(mShader);
+	gl::drawCube(vec3(), vec3(1));
+}
+
 void AccretionApp::setup()
 {
-	mTexCamera = gl::Texture2d::create(loadImage(loadAsset("textures/TX_Test_Depth.png")));
-	mTexCamera->setWrap(GL_REPEAT, GL_REPEAT);
-	mLedMesh = MeshPreview::create("shaders/led_draw.vert", "shaders/led_draw.frag", mTexCamera, this);
+	mSkyCube = SkyCube::create("shaders/skycube.vert", "shaders/skycube.frag", "textures/TX_Cube_2.png", this);
 
-	mCamera.setPerspective(90.0f, getWindowAspectRatio(), 0.1f, 200.0f);
-	mCamera.lookAt(vec3(0, 0, 100), vec3(), vec3(0, 1, 0));
+	mTexCamera = gl::Texture2d::create(loadImage(loadAsset("textures/TX_Test.png")));
+	mTexCamera->setWrap(GL_REPEAT, GL_REPEAT);
+	mLedMesh = MeshPreview::create("shaders/led_draw.vert", "shaders/led_draw.frag", mTexCamera, mSkyCube->getSkyCube(), this);
+
+	mCamera.setPerspective(60.0f, getWindowAspectRatio(), 0.1f, 200.0f);
+	mCamera.lookAt(vec3(0, 0, 80), vec3(), vec3(0, 1, 0));
 
 	mCtrl.setCamera(&mCamera);
 	mCtrl.connect(getWindow());
@@ -27,7 +50,8 @@ void AccretionApp::draw()
 	gl::color(Color::white());
 	
 	gl::setMatrices(mCamera);
-	mLedMesh->Draw(static_cast<float>(getElapsedFrames()));
+	mSkyCube->Draw();
+	mLedMesh->Draw(vec4(mCamera.getEyePoint(),0.0), static_cast<float>(getElapsedFrames()));
 }
 
 void prepareSettings(App::Settings *pSettings)
