@@ -18,6 +18,8 @@ void main()
 	vec4 refl = texture(u_SamplerCube, normalize(Reflection));
 	vec4 refr = texture(u_SamplerCube, normalize(Refraction));
 
-	FragColor = mix(refr,sample,0.5)+sample;
+	float lum = sample.r*0.3f+sample.g*0.59f+sample.b*0.11f;
+
+	FragColor = mix(refr,sample,lum)+sample;
 	
 }

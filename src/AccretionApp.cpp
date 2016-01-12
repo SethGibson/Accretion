@@ -60,4 +60,4 @@ void prepareSettings(App::Settings *pSettings)
 	pSettings->setFrameRate(60);
 }
 
-CINDER_APP( AccretionApp, RendererGl, prepareSettings )
+CINDER_APP( AccretionApp, RendererGl( RendererGl::Options().msaa(4)), prepareSettings )
