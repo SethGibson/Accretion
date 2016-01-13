@@ -46,7 +46,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;"..\..\..\..\lib\Cinder\include"</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\..\lib\Cinder\include;..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src;..\..\..\..\lib\Cinder\blocks\FadeCandyCinderClient\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -70,7 +70,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;"..\..\..\..\lib\Cinder\include"</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\..\lib\Cinder\include;..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src;..\..\..\..\lib\Cinder\blocks\FadeCandyCinderClient\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
@@ -97,14 +97,52 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\CinderAsio.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ClientEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ClientInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\DispatcherEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\DispatcherInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ServerEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ServerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\SessionEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\SessionInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpClient.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpClientEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpServer.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpServerEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpSession.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpSessionEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpClient.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpClientEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpServer.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpServerEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpSession.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpSessionEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\WaitTimer.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\WaitTimerEventHandlerInterface.h" />
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\FadeCandyCinderClient\src\OPCClient.h" />
     <ClInclude Include="..\include\AccretionApp.h" />
     <ClInclude Include="..\include\MeshPreview.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\assets\shaders\led_draw.frag" />
     <None Include="..\assets\shaders\led_draw.vert" />
+    <None Include="..\assets\shaders\skycube.frag" />
+    <None Include="..\assets\shaders\skycube.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ClientInterface.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\DispatcherInterface.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ServerInterface.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\SessionInterface.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpClient.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpServer.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpSession.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpClient.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpServer.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpSession.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\WaitTimer.cpp" />
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\FadeCandyCinderClient\src\OPCClient.cpp" />
     <ClCompile Include="..\src\AccretionApp.cpp" />
     <ClCompile Include="..\src\MeshPreview.cpp" />
   </ItemGroup>

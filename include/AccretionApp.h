@@ -5,6 +5,7 @@
 #include "cinder/CameraUi.h"
 #include "cinder/gl/gl.h"
 #include "MeshPreview.h"
+#include "OPCClient.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -41,10 +42,16 @@ public:
 	void draw() override;
 
 private:
+	void getOpcMessage();
 	MeshPreviewRef		mLedMesh;
+	
+	Surface8uRef		mSurfCamera;
 	gl::Texture2dRef	mTexCamera;
 	SkyCubeRef			mSkyCube;
 
 	CameraPersp	mCamera;
 	CameraUi	mCtrl;
+
+	OPCClientRef		mOPC;
+	vector<char>		mOPCMessage;
 };

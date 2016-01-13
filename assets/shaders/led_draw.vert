@@ -25,8 +25,8 @@ void main()
 
 	vec3 worldNrm = ciNormalMatrix*ciNormal.xyz;
 
-	Reflection = reflect(eyeVec, worldNrm);
-	Refraction = refract(eyeVec, worldNrm, i_Refract);
+	Reflection = reflect(-eyeVec, worldNrm);
+	Refraction = refract(-eyeVec, worldNrm, i_Refract);
 
 	gl_Position = ciModelViewProjection*pos_1;
 	UV = i_TexCoord;

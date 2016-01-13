@@ -25,6 +25,7 @@ class MeshPreview
 public:
 	static MeshPreviewRef create(string pVertShader, string pFragShader, gl::Texture2dRef pTexture, gl::TextureCubeMapRef pTexCube, AccretionApp *pParent);
 	void Draw(vec4 pEyePos, float pElapsed);
+	const vector<vec2>& GetUVs() { return mTexCoords;  }
 
 protected:
 	MeshPreview() {}

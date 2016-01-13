@@ -25,6 +25,9 @@
     <Filter Include="Source Files\shaders">
       <UniqueIdentifier>{a6262cef-5e2a-4bc1-9bd1-2ab9884504fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\blocks\Cinder-DSAPI">
+      <UniqueIdentifier>{9242765f-18ea-48c8-8090-9ef94da30f49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\AccretionApp.cpp">
@@ -36,16 +39,121 @@
     <ClCompile Include="..\src\MeshPreview.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\FadeCandyCinderClient\src\OPCClient.cpp">
+      <Filter>Source Files\blocks\FadecandyCinderClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ClientInterface.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\DispatcherInterface.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ServerInterface.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\SessionInterface.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpClient.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpServer.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpSession.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpClient.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpServer.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpSession.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\WaitTimer.cpp">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\Resources.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\MeshPreview.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\include\AccretionApp.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\FadeCandyCinderClient\src\OPCClient.h">
+      <Filter>Source Files\blocks\FadecandyCinderClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\CinderAsio.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ClientEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ClientInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\DispatcherEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\DispatcherInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ServerEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\ServerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\SessionEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\SessionInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpClient.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpClientEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpServer.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpServerEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpSession.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\TcpSessionEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpClient.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpClientEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpServer.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpServerEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpSession.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\UdpSessionEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\WaitTimer.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\Cinder\blocks\Cinder-Asio\src\WaitTimerEventHandlerInterface.h">
+      <Filter>Source Files\blocks\Cinder-ASIO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +161,12 @@
       <Filter>Source Files\shaders</Filter>
     </None>
     <None Include="..\assets\shaders\led_draw.vert">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\skycube.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\skycube.vert">
       <Filter>Source Files\shaders</Filter>
     </None>
   </ItemGroup>

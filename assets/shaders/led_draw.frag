@@ -20,6 +20,6 @@ void main()
 
 	float lum = sample.r*0.3f+sample.g*0.59f+sample.b*0.11f;
 
-	FragColor = mix(refr,sample,lum)+sample;
+	FragColor = mix(refr,sample,lum)+(sample*2.0f);
 	
 }
